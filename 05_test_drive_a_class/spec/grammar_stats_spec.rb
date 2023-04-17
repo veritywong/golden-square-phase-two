@@ -18,6 +18,13 @@ RSpec.describe GrammarStats do
             result = grammar_to_check.check("Hello there!")
             expect(result).to eq true
         end
+
+        it "returns false if text begins with a capital and ends with wrong punctuation mark" do
+            grammar_to_check = GrammarStats.new("Hello there!")
+            result = grammar_to_check.check("Hello there,")
+            expect(result).to eq false
+        end
+
     end
 
 
