@@ -29,6 +29,7 @@ class TaskTracker
 
     def completed(task)
       # deletes task if it is present on the todo list
+      # fails if task is not on list
     end
 
 end
@@ -52,6 +53,12 @@ todo_task = TaskTracker.new
 todo_task.add("buy milk")
 todo_task.add("walk dog")
 todo_task.show_list # => "Todo list: buy milk, walk dog"
+
+# 4
+todo_task = TaskTracker.new
+todo_task.add("buy milk")
+todo_task.add("walk cat")
+todo_task.show_list # fails "Task not on list."
 
 
 4. Implement the Behaviour

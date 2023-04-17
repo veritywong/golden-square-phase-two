@@ -32,5 +32,12 @@ RSpec.describe "TaskTracker" do
             task_todo.completed("walk dog")
             expect(task_todo.see).to eq "Your todo list is: buy milk"
         end
+
+        it "fails if task not on list" do
+            task_todo = TaskTracker.new
+            task_todo.add("buy milk")
+            task_todo.add("walk dog")
+            expect {task_todo.completed("walk cat") }.to raise_error "Task not on list."
+        end
     end
 end

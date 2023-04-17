@@ -9,6 +9,7 @@ class TaskTracker
     end
 
     def completed(task)
+        fail "Task not on list." unless @todo_list.include?(task)
         @todo_list.delete(task)
     end
 
