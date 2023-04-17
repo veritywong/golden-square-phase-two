@@ -3,9 +3,15 @@ class GrammarStats
         @text = text
     end
   
-    def check(text) # text is a string
-      # Returns true or false depending on whether the text begins with a capital
-      # letter and ends with a sentence-ending punctuation mark.
+    def check(text)
+        fail "Not a sentence." if text.empty?
+        first_letter_is_uppercase = text[0] == text[0].upcase
+        last_character_is_valid = [".", "!", "?"].include? text[-1]
+        if first_letter_is_uppercase && last_character_is_valid
+            return true
+        else
+            return false
+        end
     end
   
     def percentage_good
