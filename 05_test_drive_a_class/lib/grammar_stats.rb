@@ -1,6 +1,5 @@
 class GrammarStats
-  def initialize(text)
-    @text = text
+  def initialize
     @correct_sentence_count = 0
     @incorrect_sentence_count = 0
   end
