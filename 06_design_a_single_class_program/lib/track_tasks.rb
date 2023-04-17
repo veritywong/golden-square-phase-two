@@ -3,13 +3,16 @@ class TaskTracker
       @todo_list = []
     end
 
-    def add(text)
-      fail "no task added" if text.empty?
-      @todo_list << text
+    def add(task)
+      fail "no task added" if task.empty?
+      @todo_list << task
     end
 
     def see
       list = @todo_list.join(", ")
       "Your todo list is: #{list}"
+    end
+
+    def completed(task)
     end
 end

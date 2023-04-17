@@ -23,19 +23,14 @@ RSpec.describe "TaskTracker" do
             expect(task_todo.see).to eq "Your todo list is: buy milk, walk dog"
         end
     end
+
+    context "remove completed tasks from list" do
+        it "removes task" do
+            task_todo = TaskTracker.new
+            task_todo.add("buy milk")
+            task_todo.add("walk dog")
+            task_todo.completed("walk dog")
+            expect(task_todo.see).to eq "Your todo list is: buy milk"
+        end
+    end
 end
-
-# # 1
-# todo_task = TaskTracker.new
-# todo_task.show_list # => []
-
-# # 2
-# todo_task = TaskTracker.new
-# todo_task.add("buy milk")
-# todo_task.show_list # => "Todo list: buy milk"
-
-# # 3
-# todo_task = TaskTracker.new
-# todo_task.add("buy milk")
-# todo_task.add("walk dog")
-# todo_task.show_list # => "Todo list: buy milk, walk dog"
