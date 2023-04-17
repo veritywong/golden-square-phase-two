@@ -14,5 +14,9 @@ class TaskTracker
     end
 
     def completed(task)
+        list = @todo_list.join(", ")
+        if list(task)
+            list.delete!(task)
+        end
     end
 end
