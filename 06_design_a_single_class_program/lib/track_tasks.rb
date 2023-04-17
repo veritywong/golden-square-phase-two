@@ -9,6 +9,7 @@ class TaskTracker
     end
 
     def see
-      "Your todo list is: #{@todo_list}"
+      list = @todo_list.join(", ")
+      "Your todo list is: #{list}"
     end
 end

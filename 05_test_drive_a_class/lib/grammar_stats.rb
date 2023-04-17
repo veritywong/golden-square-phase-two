@@ -19,9 +19,6 @@ class GrammarStats
 
   def percentage_good
     total = @correct_sentence_count + @incorrect_sentence_count
-    # if total == 0
-    #   return" kdd"
-    # end
     percentage = @correct_sentence_count.to_f / total.to_f * 100
     return percentage
     # Returns as an integer the percentage of texts checked so far that passed

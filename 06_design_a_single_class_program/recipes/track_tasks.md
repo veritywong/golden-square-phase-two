@@ -30,7 +30,8 @@ Make a list of examples of how the class will behave in different situations.
 
 # 1
 todo_task = TaskTracker.new
-todo_task.show_list # => []
+todo_task.add("")
+todo_task.show_list # fail
 
 # 2
 todo_task = TaskTracker.new
