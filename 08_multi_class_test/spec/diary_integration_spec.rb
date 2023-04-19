@@ -50,15 +50,15 @@ RSpec.describe "DiaryEntry and Diary integration" do
     end
 
 
-    context "when chunk has been read" do
-        xit "returns the next readable chunk" do
-            diary = Diary.new
-            diary_entry = DiaryEntry.new("Monday", "sleepy")
-            next_entry = DiaryEntry.new("Tuesday", "hungry")
-            diary.add(diary_entry)
-            diary.add(next_entry)
-            chunk = diary.reading_chunk(2, 1)
-            expect(chunk).to eq "sleepy"
-        end
-    end
+    # context "when chunk has been read" do
+    #     it "returns the next readable chunk" do
+    #         diary = Diary.new
+    #         diary_entry = DiaryEntry.new("Monday", "sleepy")
+    #         next_entry = DiaryEntry.new("Tuesday", "hungry")
+    #         diary.add(diary_entry)
+    #         diary.add(next_entry)
+    #         chunk = diary.reading_chunk(2, 1)
+    #         expect(chunk).to eq "sleepy"
+    #     end
+    # end
 end
