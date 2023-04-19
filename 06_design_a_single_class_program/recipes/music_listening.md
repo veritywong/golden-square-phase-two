@@ -9,41 +9,47 @@ Put or write the user story here. Add any clarifying notes you might have.
 2. Design the Class Interface
 Include the initializer and public methods with all parameters and return values.
 
-# EXAMPLE
+class MusicListening
 
-class Reminder
-  def initialize(name) # name is a string
-    # ...
+  def initialize
+      #creates an empty array to store the song tracks in
   end
 
-  def remind_me_to(task) # task is a string
-    # No return value
+  def add(tracks)
+    # adds tracks to the array
+    # tracks is a string containing the song name
   end
 
-  def remind()
-    # Throws an exception if no task is set
-    # Otherwise, returns a string reminding the user to do the task
+  def list
+    # shows the list of songs listened to
   end
+
 end
+
+
 3. Create Examples as Tests
 Make a list of examples of how the class will behave in different situations.
 
-# EXAMPLE
-
 # 1
-reminder = Reminder("Kay")
-reminder.remind_me_to("Walk the dog")
-reminder.remind() # => "Walk the dog, Kay!"
+tracks_listened_to = MusicListening.new
+tracks_listened_to.list # => []
 
 # 2
-reminder = Reminder("Kay")
-reminder.remind() # fails with "No task set."
+tracks_listened_to = MusicListening.new
+tracks_listened_to.add("Mercy, Mercy")
+tracks_listened_to.list # => ["Mercy, Mercy"]
 
 # 3
-reminder = Reminder("Kay")
-reminder.remind_me_to("")
-reminder.remind() # => ", Kay!"
-Encode each example as a test. You can add to the above list as you go.
+tracks_listened_to = MusicListening.new
+tracks_listened_to.add("Mercy, Mercy")
+tracks_listened_to.add("Survivor")
+tracks_listened_to.list # => ["Mercy, Mercy", "Survivor"]
+
+# 4
+tracks_listened_to = MusicListening.new
+tracks_listened_to.add("") # it fails "No track added."
+
+
 
 4. Implement the Behaviour
 After each test you write, follow the test-driving process of red, green, refactor to implement the behaviour.
