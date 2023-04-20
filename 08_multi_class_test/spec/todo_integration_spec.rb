@@ -2,9 +2,6 @@ require 'todo'
 require 'todo_list'
 
 RSpec.describe "todo list and todo class integration" do
-    describe "when no items added to list" do
-
-    end
 
     describe "when items are added onto the list" do
         it "shows complete item" do

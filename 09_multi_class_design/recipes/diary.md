@@ -53,19 +53,6 @@ uses asciiflow.com but you could also use excalidraw.com, draw.io, or miro.com_
 
 
 
-
-                ┌───────────────────────────┐
-                │                           │
-                │  Contacts                 │
-                │                           │
-                │  - number                 │
-                │                           │
-                │                           │
-                │                           │
-                │                           │
-                └───────────────────────────┘
-
-
 ```ruby
 class Diary
     def initalize #creates an instace of diary which opens an empty list
@@ -78,6 +65,9 @@ class Diary
     end
 
     def chunk(wpm, minutes) # shows largest entry that can be read given the time and wpm
+    end
+
+    def contacts # extracts numbers from diary entries
     end
 end
 
@@ -116,13 +106,6 @@ class Todo
 
 end
 
-class Contacts
-    def title #stores contacts name?
-    end
-
-    def number #stores numbers of contacts from DiaryEntry instances
-    end
-end
 ```
 
 ## 3. Create Examples as Integration Tests
@@ -159,8 +142,15 @@ combinations that reflect the ways in which the system will be used._
         todo_list.add(todo_2)
         expect(todo_list.show).to eq [todo_1, todo_2]
 
+    4. show list of contacts with mobile phone numbers from diary entries
+        diary = Diary.new
+        entry_1 = DiaryEntry.new("my title 1", "Hannah, 07799988866")
+        entry_2 = DiaryEntry.new("my title 2", "Sally 07711122233")
+        diary.add(entry_1)
+        diary.add(entry_2)
+        
+        expect(diary.contacts)).to eq {"Hannah" => "07711122233",       "Sally" => "07711122233"}
 
-    see a list of all of the mobile phone numbers in all my diary entries
 ```
 
 ## 4. Create Examples as Unit Tests
